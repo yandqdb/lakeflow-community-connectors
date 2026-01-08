@@ -5,7 +5,6 @@ from pyspark.sql.types import (
     StructField,
     StringType,
     LongType,
-    IntegerType,
     ArrayType,
 )
 
@@ -490,7 +489,7 @@ class LakeflowConnect:
             for record in records:
                 yield record
 
-        return record_iterator(), None
+        return record_iterator(), {}
 
     def _read_categories(
         self, start_offset: dict, table_options: dict[str, str]
@@ -520,7 +519,7 @@ class LakeflowConnect:
             for record in records:
                 yield record
 
-        return record_iterator(), None
+        return record_iterator(), {}
 
     def _read_votes(
         self, start_offset: dict, table_options: dict[str, str]
